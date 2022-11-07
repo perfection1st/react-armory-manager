@@ -3,21 +3,9 @@ import {useEffect, useState} from 'react';
 
 const API = 'http://localhost:3001';
 
-export const RosterTable = () => {
-  const [roster, setRoster] = useState([]);
+export const RosterTable = (props) => {
 
-  const getRoster = () => {
-    fetch(`${API}/soldiers`)
-      .then((response) => response.json())
-      .then((data) => setRoster(data));
-  };
-
-// Fetch data
-  useEffect(() => {
-    getRoster();
-  }, []);
-
-  const soldiers = roster.map((soldier) => {
+  const soldiers = props.roster.map((soldier) => {
     return (
       <tr key={soldier.id}>
         <td>{soldier.lin}</td>
@@ -30,7 +18,6 @@ export const RosterTable = () => {
     )
   });
   
-
 return (
     <Table striped bordered hover>
       <thead>

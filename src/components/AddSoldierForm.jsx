@@ -1,10 +1,11 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 const API = 'http://localhost:3001'
 
-export const AddSoldierForm = () => {
+export const AddSoldierForm = (props) => {
   const [inputValues, setInputValues] = useState(undefined);
 
   const handleChange = (e) => {
@@ -28,18 +29,14 @@ export const AddSoldierForm = () => {
 
   const handleAddSoldier = (e) => {
     e.preventDefault();
+    props.update();
     if(inputValues === undefined) {
       alert('please enter something in the forms', inputValues)
     } else {
       postSoldier();
     }
 
-
-
   }
-
-
-
 
   return (
     <Form>
@@ -83,6 +80,7 @@ export const AddSoldierForm = () => {
       name="nvg"
       placeholder="Soldier's Night Vision Device e.g. PSQ-20"
     />
+    <hr />
     <Button type="submit" onClick={handleAddSoldier}>Add Soldier</Button>
     </Form>
   )

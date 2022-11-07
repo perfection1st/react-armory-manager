@@ -5,3 +5,14 @@ body {
   justify-content:center;
   background-image: linear-gradient(to right, #48b0ff, #4bbfff, #5dcdfd, #76dafa, #91e6f8, #91e6f8, #91e6f8, #91e6f8, #76dafa, #5dcdfd, #4bbfff, #48b0ff);
 }
+header {
+  background:rgba(0, 0, 0, 0.25);
+  box-shadow:0 4px 30px rgb(0 0 0 / 10%);
+  padding:50px;
+  border-bottom-right-radius:15px;
+  border-bottom-left-radius:15px;
+}
+section#roster {
+  margin-top:20px;
+  margin-bottom:20px;
+}
